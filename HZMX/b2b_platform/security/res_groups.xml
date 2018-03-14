@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="b2b_shop_operator" model="res.groups">
+            <field name="name">b2b业务员</field>
+            <field name="implied_ids" eval="[(6, 0, [
+                ref('purchase.group_purchase_manager'),
+                ref('sales_team.group_sale_manager'),
+                ref('stock.group_stock_manager'),
+                ])]"/>
+        </record>
+
+        <record id="b2b_seller" model="res.groups">
+            <field name="name">b2b商户</field>
+            <field name="implied_ids" eval="[(6, 0, [
+                ref('purchase.group_purchase_manager'),
+                ref('sales_team.group_sale_manager'),
+                ref('stock.group_stock_manager'),
+                ref('base.group_erp_manager'),
+                ])]"/>
+        </record>
+
+        <record id="b2b_manager" model="res.groups">
+            <field name="name">b2b管理员</field>
+            <field name="implied_ids" eval="[(6, 0, [
+                ref('purchase.group_purchase_manager'),
+                ref('sales_team.group_sale_manager'),
+                ref('stock.group_stock_manager'),
+                ref('base.group_erp_manager'),
+                ])]"/>
+        </record>
+
+        <!--新权限配置-->
+        <!--<record id="b2b_shop_operator" model="res.groups">-->
+            <!--<field name="name">亚马逊</field>-->
+            <!--<field name="implied_ids" eval="[(6, 0, [-->
+                <!--ref('purchase.group_purchase_manager'),-->
+                <!--ref('sales_team.group_sale_salesman_all_leads'),-->
+                <!--ref('stock.group_stock_manager'),-->
+                <!--])]"/>-->
+        <!--</record>-->
+
+        <!--<record id="b2b_shop_operator" model="res.groups">-->
+            <!--<field name="name">仓储</field>-->
+            <!--<field name="implied_ids" eval="[(6, 0, [-->
+                <!--ref('purchase.group_purchase_manager'),-->
+                <!--ref('sales_team.group_sale_salesman_all_leads'),-->
+                <!--ref('stock.group_stock_manager'),-->
+                <!--])]"/>-->
+        <!--</record>-->
+
+        <!--<record id="b2b_shop_operator" model="res.groups">-->
+            <!--<field name="name">财务</field>-->
+            <!--<field name="implied_ids" eval="[(6, 0, [-->
+                <!--ref('purchase.group_purchase_manager'),-->
+                <!--ref('sales_team.group_sale_salesman_all_leads'),-->
+                <!--ref('stock.group_stock_manager'),-->
+                <!--])]"/>-->
+        <!--</record>-->
+
+        <!--<record id="b2b_shop_operator" model="res.groups">-->
+            <!--<field name="name">b2b业务员</field>-->
+            <!--<field name="implied_ids" eval="[(6, 0, [-->
+                <!--ref('purchase.group_purchase_manager'),-->
+                <!--ref('sales_team.group_sale_salesman_all_leads'),-->
+                <!--ref('stock.group_stock_manager'),-->
+                <!--])]"/>-->
+        <!--</record>-->
+
+        <!--<record id="b2b_seller" model="res.groups">-->
+            <!--<field name="name">b2b商户</field>-->
+            <!--<field name="implied_ids" eval="[(6, 0, [-->
+                <!--ref('purchase.group_purchase_manager'),-->
+                <!--ref('sales_team.group_sale_salesman_all_leads'),-->
+                <!--ref('stock.group_stock_manager'),-->
+                <!--ref('base.group_erp_manager'),-->
+                <!--])]"/>-->
+        <!--</record>-->
+
+        <!--<record id="b2b_manager" model="res.groups">-->
+            <!--<field name="name">b2b管理员</field>-->
+            <!--<field name="implied_ids" eval="[(6, 0, [-->
+                <!--ref('purchase.group_purchase_manager'),-->
+                <!--ref('sales_team.group_sale_salesman_all_leads'),-->
+                <!--ref('stock.group_stock_manager'),-->
+                <!--ref('base.group_erp_manager'),-->
+                <!--])]"/>-->
+        <!--</record>-->
+
+
+	</data>
+</odoo>

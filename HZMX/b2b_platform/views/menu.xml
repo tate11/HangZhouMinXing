@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <menuitem id="product_root" name="产品" sequence="1" groups="b2b_platform.b2b_shop_operator,b2b_platform.b2b_seller,b2b_platform.b2b_manager"/>
+            <menuitem id="platform_tmpl_menu" parent="product_root" name="平台产品" sequence="1"/>
+            <menuitem id="merchant_tmpl_menu" parent="product_root" name="商户产品" sequence="3"/>
+            <menuitem id="shop_tmpl_menu" parent="product_root" name="店铺产品" sequence="5"/>
+            <menuitem id="sync_product_parent_menu" parent="product_root" name="产品同步" sequence="7"/>
+
+        <menuitem id="ecommerce_menu_root" name="跨境电商" sequence="3" groups="b2b_platform.b2b_shop_operator,b2b_platform.b2b_seller,b2b_platform.b2b_manager"/>
+            <menuitem id="account_authorized_menu" parent="ecommerce_menu_root" name="账户授权" sequence="1"/>
+            <menuitem id="sale_order_parent_menu" parent="ecommerce_menu_root" name="订单列表" sequence="3"/>
+            <menuitem id="purchase_parent_menu" parent="ecommerce_menu_root" name="代发采购" sequence="5"/>
+            <menuitem id="stock_parent_menu" parent="ecommerce_menu_root" name="发货管理" sequence="7"/>
+            <menuitem id="stock_manage_parent_menu" parent="ecommerce_menu_root" name="库存管理" sequence="8"/>
+            <menuitem id="fba_replenish_parent_menu" parent="ecommerce_menu_root" name="FBA补货" sequence="10"/>
+            <menuitem id="order_appeal_parent_menu" parent="ecommerce_menu_root" name="申诉管理" sequence="12"/>
+            <menuitem id="log_menu" parent="ecommerce_menu_root" name="日志" sequence="14"/>
+
+        <menuitem id="b2b_merchant_menu_root" name="平台商户" sequence="4" groups="b2b_platform.b2b_shop_operator,b2b_platform.b2b_seller,b2b_platform.b2b_manager"/>
+            <menuitem id="agent_purchase_parent_menu" parent="b2b_merchant_menu_root" name="代发订单" sequence="1"/>
+            <menuitem id="receive_fba_replenish_order_parent_menu" parent="b2b_merchant_menu_root" name="FBA订单" sequence="3"/>
+            <menuitem id="receive_appeal_order_parent_menu" parent="b2b_merchant_menu_root" name="收到申诉" sequence="5"/>
+
+        <menuitem id="stock_menu_root" name="仓储" sequence="5" groups="b2b_platform.b2b_shop_operator,b2b_platform.b2b_seller,b2b_platform.b2b_manager"/>
+            <menuitem id="Logistics_manage_menu" parent="stock_menu_root" name="物流管理" sequence="1"/>
+            <menuitem id="delivery_manage_menu" parent="stock_menu_root" name="发货管理" sequence="3"/>
+            <menuitem id="stock_manage_menu" parent="stock_menu_root" name="库存管理" sequence="5"/>
+            <menuitem id="location_manage_menu" parent="stock_menu_root" name="库位管理" sequence="7"/>
+
+        <record model="ir.ui.menu" id="b2b_acount_root">
+            <field name="name" >财务</field>
+            <field name="groups_id" eval="[(6,0,[ref('b2b_platform.b2b_seller'), ref('b2b_platform.b2b_manager')])]"/>
+            <field name="sequence">7</field>
+        </record>
+            <menuitem id="account_management_menu" parent="b2b_acount_root" name="财务管理" sequence="1"/>
+            <menuitem id="account_close_menu" parent="b2b_acount_root" name="结算管理" sequence="2"/>
+            <menuitem id="account_configuration_menu" parent="b2b_acount_root" name="配置" sequence="3"/>
+
+        <menuitem id="platform_manage_root" name="平台运营" sequence="9" groups="b2b_platform.b2b_shop_operator,b2b_platform.b2b_seller,b2b_platform.b2b_manager"/>
+            <menuitem id="acount_manage_parent" name="账号管理" parent="platform_manage_root" sequence="1"/>
+            <menuitem id="finance_management_menu" parent="platform_manage_root" name="财务管理" sequence="3"/>
+            <menuitem id="fba_replenish_platform_menu" parent="platform_manage_root" name="FBA补货" sequence="5"/>
+            <menuitem id="appeal_order_platform_menu" parent="platform_manage_root" name="申诉单" sequence="7"/>
+            <menuitem id="base_data_menu" name="基础数据" parent="platform_manage_root" sequence="9"/>
+
+        <!--隐藏销售、采购、仓库、会计菜单-->
+        <record model="ir.ui.menu" id="sales_team.menu_base_partner">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="purchase.menu_purchase_root">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="stock.menu_stock_root">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="account.menu_finance">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+        <!--隐藏设置菜单-->
+        <record model="ir.ui.menu" id="base.menu_administration">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+        <!--隐藏网站管理菜单-->
+        <record model="ir.ui.menu" id="website.menu_website_configuration">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+        <!--隐藏网站菜单-->
+        <record model="ir.ui.menu" id="website.menu_website">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+        </record>
+	</data>
+</odoo>

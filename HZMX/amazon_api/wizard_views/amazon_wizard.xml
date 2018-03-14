@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <!--假发货-->
+		<record id="false_delivery_wizard" model="ir.ui.view">
+			<field name="name">false_delivery_wizard</field>
+			<field name="model">amazon.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<group>
+							<field name="logistics_company_name" required="True"/>
+							<!--<field name="logistics_company_code"/>-->
+							<field name="shipment_number" required="True"/>
+							<field name="delivery_time" required="True"/>
+						</group>
+					</group>
+					<footer>
+						<button string='假发货' name="false_delivery" type="object" class="btn-primary"/>
+						<button string="取消" class="btn-default" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>
